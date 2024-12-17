@@ -1,0 +1,26 @@
+# Python Ignore Rules
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+env/
+venv/
+*.log
+
+# Java Ignore Rules
+*.class
+*.jar
+*.war
+*.ear
+target/
+bin/
+build/
+*.iml
+.idea/
+
+# General Ignore Rules
+.DS_Store
+Thumbs.db
+*.tmp
+node_modules/
+*.swp

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{name}}'s Stats</title>
+    <style>
+
+        /* Set a light blue background and overlay the image */
+        body {
+            background: aliceblue url('multiple.jpg') no-repeat center center; /* Light blue fallback with the image overlay */
+            background-size: cover; /* Ensure the image covers the entire page */
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #000; /* Set text color to black for contrast */
+        }
+
+
+        h1 {
+            text-align: center;
+            margin-bottom: 18px;
+            color: #fff; //white
+            background-color: #007bff; // blue
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Add text shadow for readability */
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-bottom: 18px;
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background for tables */
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 6px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        /* Add padding for better spacing */
+        body > * {
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Stats for {{name}}</h1>
+
+    <h2>Summary Information</h2>
+    <table>
+        <tr>
+            <th>Player ID</th>
+            <th>Number</th>
+            <th>Country</th>
+            <th>Position</th>
+            <th>Age</th>
+            <th>Current Total Points</th>
+        </tr>
+        <tr>
+            <td>{{summary.details:player_id}}</td>
+            <td>{{summary.details:number}}</td>
+            <td>{{summary.details:country}}</td>
+            <td>{{summary.details:position}}</td>
+            <td>{{summary.details:age}}</td>
+            <td>{{summary.details:current_total_points}}</td>
+        </tr>
+    </table>
+
+    <h2>Detailed Career Stats</h2>
+    <table>
+        <tr>
+            <th>Season</th>
+            <th>Team</th>
+            <th>Age</th>
+            <th>Games Played</th>
+            <th>Games Started</th>
+            <th>Minutes</th>
+            <th>Points</th>
+            <th>Rebounds</th>
+            <th>Assists</th>
+            <th>Steals</th>
+            <th>Blocks</th>
+            <th>Three-Points</th>
+        </tr>
+        {{#details}}
+        <tr>
+            <td>{{details:season_id}}</td>
+            <td>{{details:team_abbreviation}}</td>
+            <td>{{details:player_age}}</td>
+            <td>{{career_stats:gp}}</td>
+            <td>{{career_stats:gs}}</td>
+            <td>{{career_stats:min}}</td>
+            <td>{{career_stats:pts}}</td>
+            <td>{{career_stats:reb}}</td>
+            <td>{{career_stats:ast}}</td>
+            <td>{{career_stats:stl}}</td>
+            <td>{{career_stats:blk}}</td>
+            <td>{{career_stats:fg3m}}</td>
+        </tr>
+        {{/details}}
+    </table>
+</body>
+</html>
